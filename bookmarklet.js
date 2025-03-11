@@ -1,7 +1,7 @@
 // JS to be called from the bookmarklet
 (function (window) {
     const id = 'tracker-finder';
-    const scriptSrc = 'http://127.0.0.1:62229/script.js'
+    const scriptSrc = 'https://tgrubbz.github.io/tracker-finder/script.js'
     if (!window.trackerFinder) {
         const script = document.createElement('script');
         script.id = id;
