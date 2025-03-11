@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarklet Installer</title>
+</head>
+<body>
+    <h2>Bookmarklet Installer</h2>
+    <p>Drag the following link to your bookmarks bar:</p>
+    <a id="bookmarklet" href="#" >Tracker Finder</a>
+
+    <script>
+        fetch('bookmarklet.txt')
+            .then(response => response.text())
+            .then(script => {
+                document.getElementById('bookmarklet').setAttribute('href', script);
+            })
+            .catch(error => {
+                console.error('Failed to load bookmarklet script:', error);
+            });
+    </script>
+</body>
+</html>
