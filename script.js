@@ -11,7 +11,7 @@ function run() {
     };
 
     let results = {};
-    const host = window.location.hostname;
+    const url = window.location;
 
     for (let tracker in trackers) {
         results[tracker] = { found: false };
@@ -48,13 +48,13 @@ function run() {
         let row = document.createElement('tr');
         row.innerHTML = `
             <td style="border: 1px solid black; padding: 8px;">${tracker}</td>
-            <td style="border: 1px solid black; padding: 8px;">${(tracker.found ? 'Y' : 'N')}</td>
+            <td style="border: 1px solid black; padding: 8px;">${(results[tracker].found ? 'Y' : 'N')}</td>
         `;
         tbody.appendChild(row);
     }
 
     let title = document.createElement('div');
-    title.innerHTML = `<h1>Trackers found on ${host}</h1>`;
+    title.innerHTML = `<h1>Tracker Finder results from</h1><div><a href="${url}">${url}</a></div>`;
 
     // Create a new window
     let w = window.open("");
